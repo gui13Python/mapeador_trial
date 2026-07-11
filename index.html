@@ -28,7 +28,7 @@ body{
   font-family:'IBM Plex Sans',sans-serif;
   line-height:1.6;
 }
-.wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+.wrap{max-width:1040px;margin:0 auto;padding:0 clamp(18px, 5vw, 24px);}
 a{color:var(--accent-dark);}
 
 /* NAV */
@@ -184,13 +184,10 @@ footer a{color:var(--muted);}
 
 /* Tablets */
 @media (max-width:900px){
-  .wrap{padding:0 20px;}
   .hero{gap:36px;}
 }
 
 @media (max-width:760px){
-  .wrap{padding:0 24px;}
-
   /* Nav becomes a compact wrapping bar */
   nav{
     flex-wrap:wrap;
@@ -240,7 +237,6 @@ footer a{color:var(--muted);}
 
 /* Small phones */
 @media (max-width:400px){
-  .wrap{padding:0 20px;}
   h1{font-size:1.3em;}
   .price-tag{font-size:1.7em;}
   .key{width:28px;height:28px;font-size:10px;}
