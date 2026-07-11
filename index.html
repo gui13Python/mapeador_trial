@@ -73,6 +73,11 @@ h1{
 .btn-primary:hover{background:var(--accent-dark);}
 .btn-secondary{background:transparent;color:var(--ink);border:1px solid var(--line);}
 .btn-secondary:hover{border-color:var(--ink);}
+.trial-hint{
+  display:inline-block;margin-top:18px;font-size:14px;color:var(--accent-dark);
+  text-decoration:none;font-weight:500;
+}
+.trial-hint:hover{text-decoration:underline;}
 
 /* KEYBOARD DEMO */
 .keydemo{
@@ -175,10 +180,72 @@ h2{font-family:'Space Mono',monospace;font-size:1.7em;margin-bottom:12px;}
 footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;}
 footer a{color:var(--muted);}
 
+/* ===== RESPONSIVE ===== */
+
+/* Tablets */
+@media (max-width:900px){
+  .wrap{padding:0 20px;}
+  .hero{gap:36px;}
+}
+
 @media (max-width:760px){
-  .hero{grid-template-columns:1fr;}
-  .steps,.features{grid-template-columns:1fr;}
-  h1{font-size:1.9em;}
+  .wrap{padding:0 24px;}
+
+  /* Nav becomes a compact wrapping bar */
+  nav{
+    flex-wrap:wrap;
+    row-gap:14px;
+    padding:16px 0;
+  }
+  .nav-links{
+    order:3;
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:16px 20px;
+    font-size:13px;
+  }
+  .nav-cta{padding:9px 16px;font-size:13px;}
+
+  .hero{grid-template-columns:1fr;padding:36px 0 36px;gap:28px;}
+  h1{font-size:1.5em;}
+  .hero p.lead{max-width:none;font-size:0.95em;}
+  .btn-row{flex-direction:column;gap:10px;}
+  .btn-row .btn{width:100%;justify-content:center;}
+  .btn{padding:12px 18px;font-size:13.5px;border-radius:6px;}
+  .trial-hint{
+    display:block;text-align:center;margin-top:16px;font-size:13px;
+  }
+
+  .keydemo{padding:24px 16px;}
+  .key{width:34px;height:34px;font-size:11px;}
+  .keyrow{gap:6px;}
+
+  section{padding:40px 0;}
+  h2{font-size:1.4em;}
+
+  .steps,.features{grid-template-columns:1fr;gap:16px;}
+  .feature{padding:18px;}
+
+  .transp-item{flex-direction:column;gap:8px;padding:16px;}
+
+  .price-card{max-width:100%;padding:26px 20px;}
+  .price-tag{font-size:2em;}
+
+  .support-box{flex-direction:column;align-items:flex-start;padding:22px;}
+  .support-box .watsapp{width:100%;text-align:center;}
+
+  footer{font-size:12px;padding:28px 18px;}
+}
+
+/* Small phones */
+@media (max-width:400px){
+  .wrap{padding:0 20px;}
+  h1{font-size:1.3em;}
+  .price-tag{font-size:1.7em;}
+  .key{width:28px;height:28px;font-size:10px;}
+  .nav-links{gap:12px 14px;font-size:12px;}
+  .logo{font-size:16px;}
 }
 
 .watsapp{
@@ -198,6 +265,7 @@ footer a{color:var(--muted);}
     <a href="#como-funciona">Como funciona</a>
     <a href="#recursos">Recursos</a>
     <a href="#transparencia">Transparência</a>
+    <a href="#trial">Versão trial</a>
     <a href="#preco">Preço</a>
   </div>
   <a href="#preco" class="nav-cta">Comprar</a>
@@ -215,6 +283,7 @@ footer a{color:var(--muted);}
       <a href="#preco" class="btn btn-primary">Ver preço e comprar</a>
       <a href="#como-funciona" class="btn btn-secondary">Como funciona</a>
     </div>
+    <a href="#trial" class="trial-hint">Quer testar antes? Baixe a versão trial grátis →</a>
   </div>
   <div class="keydemo">
     <div class="keyrow">
@@ -300,6 +369,26 @@ footer a{color:var(--muted);}
       <span class="transp-mark">✓</span>
       <p><strong>Código aberto para consulta.</strong> Qualquer pessoa pode revisar como o programa funciona antes de comprar.</p>
     </div>
+  </div>
+</section>
+
+<section id="trial" class="wrap">
+  <div class="section-head">
+    <span class="eyebrow">Teste antes de comprar</span>
+    <h2>Baixe a versão trial gratuita</h2>
+    <p>Não precisa decidir sem testar. Baixe a versão trial, veja o programa bloqueando ou remapeando sua tecla com defeito, e só depois decida pela licença completa.</p>
+  </div>
+  <div class="price-card">
+    <span class="eyebrow">Tecla Ghost Fix — trial</span>
+    <div class="price-tag">Grátis <span>por tempo limitado</span></div>
+    <ul class="price-list">
+      <li>Bloqueio e remapeamento liberados para teste</li>
+      <li>Mesma interface simples da versão completa</li>
+      <li>Sem cadastro e sem cartão de crédito</li>
+      <li>Funciona em qualquer PC ou notebook com Windows 10/11</li>
+    </ul>
+    <a href="#" class="btn btn-secondary" style="width:100%;justify-content:center;" target="_blank" rel="noopener noreferrer">Baixar versão trial</a>
+    <p class="price-note">Gostou? Ative a licença vitalícia completa por R$ 37,00 quando quiser, sem precisar baixar nada de novo.</p>
   </div>
 </section>
 
