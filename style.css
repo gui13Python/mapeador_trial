@@ -1,0 +1,324 @@
+/* TESTIMONIALS / DEPOIMENTOS */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.testi-stars {
+  color: #ffc107; /* Cor dourada das estrelas */
+  font-size: 16px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+.testi-text {
+  font-size: 14.5px;
+  color: var(--ink);
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.testi-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--paper);
+  padding-top: 12px;
+}
+.testi-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--paper);
+}
+.testi-meta {
+  display: flex;
+  flex-direction: column;
+}
+.testi-author {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.testi-role {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Ajuste para celular */
+@media (max-width: 760px) {
+  .testimonials {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    
+  }
+
+  #bt hover {
+    background-color: #020202;
+  }
+  
+}
+
+
+
+/* FAQ ACCORDION */
+.faq-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line); /* Mantém compatibilidade */
+  padding: 0; /* Reseta o padding antigo */
+}
+.faq-item summary {
+  padding: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none; /* Remove a seta padrão */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+  user-select: none;
+}
+.faq-item summary:hover {
+  background: var(--paper-2);
+}
+.faq-item summary::-webkit-details-marker {
+  display: none; /* Remove a seta padrão no Safari/Chrome antigo */
+}
+/* Cria o sinal de + */
+.faq-item summary::after {
+  content: "+";
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: var(--accent-dark);
+  transition: transform 0.2s;
+}
+/* Quando o accordion está aberto */
+.faq-item[open] summary {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-2);
+}
+/* Transforma o + em - quando abre */
+.faq-item[open] summary::after {
+  content: "−";
+}
+.faq-content {
+  padding: 18px;
+  background: var(--white);
+}
+.faq-content p {
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+/* ====================================================
+   ESTILO BASE DO BOTÃO (Funciona em todas as telas)
+   ==================================================== */
+.btn-checkout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 7px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  background-color: #7cfc55 !important; /* Seu verde limão */
+  color: #1f2620 !important;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+/* ====================================================
+   MEDIA QUERY: APENAS PARA PC (Telas maiores que 760px)
+   Aqui o efeito de passar o mouse funciona perfeitamente
+   ==================================================== */
+@media (min-width: 761px) {
+  .btn-checkout:hover {
+    background-color: #215710 !important; /* Verde mais escuro no hover */
+    color: #ffffff !important;
+    transform: translateY(-1px);          /* Leve flutuada */
+  }
+}
+
+/* ====================================================
+   MEDIA QUERY: APENAS PARA MOBILE (Telas até 760px)
+   Focado no toque do dedo (sem efeito de mouse parado)
+   ==================================================== */
+@media (max-width: 760px) {
+  .btn-checkout:active {
+    background-color: #4cb82b !important; /* Escurece apenas ENQUANTO o dedo pressiona */
+    transform: scale(0.98);               /* Dá um efeito de "afundar" o botão */
+  }
+}
+
+
+/* ====================================================
+   ESTILO DO BOTÃO ANIMADO (PULSANTE AUTOMÁTICO)
+   ==================================================== */
+.btn-checkout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 7px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  background-color: #7cfc55 !important; /* Seu verde limão */
+  color: #1f2620 !important;
+  cursor: pointer;
+  border: none;
+  
+  /* Ativa a animação automática: roda infinita a cada 2 segundos */
+  animation: pulsarBotao 2s infinite ease-in-out;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* ====================================================
+   A ANIMAÇÃO QUE FAZ ELE SE MEXER SOZINHO
+   ==================================================== */
+@keyframes pulsarBotao {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(124, 252, 85, 0.7);
+  }
+  50% {
+    transform: scale(1.03); /* Ele cresce levemente */
+    box-shadow: 0 0 15px 5px rgba(124, 252, 85, 0); /* Cria um pulso de luz */
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(124, 252, 85, 0);
+  }
+}
+
+/* ====================================================
+   MEDIA QUERY: AJUSTE PARA QUANDO O USUÁRIO INTERAGE
+   ==================================================== */
+
+/* No PC: Quando passa o mouse, ele pausa a animação e fica fixo no verde focado */
+@media (min-width: 761px) {
+  .btn-checkout:hover {
+    animation-play-state: paused; /* Pausa o pulso para o usuário clicar com firmeza */
+    background-color: #2d990c !important; 
+    transform: scale(1.02);
+  }
+}
+
+/* No Mobile: Quando o dedão pressiona o botão */
+@media (max-width: 760px) {
+  .btn-checkout:active {
+    animation-play-state: paused;
+    background-color: #4cb82b !important;
+    transform: scale(0.98) !important; /* Efeito de afundar o botão */
+  }
+}
+
+
+/* ====================================================
+   ESTILO DO BOTÃO ANIMADO CORRIGIDO (PC E MOBILE)
+   ==================================================== */
+.btn-checkout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 7px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  background-color: #7cfc55 !important; /* Verde limão padrão */
+  color: #1f2620 !important;
+  cursor: pointer;
+  border: none;
+  
+  /* Ativa a animação infinita de pulsar */
+  animation: pulsarBotao 2s infinite ease-in-out;
+  transition: background-color 0.2s ease;
+}
+
+/* ANIMAÇÃO EM LOOP (SÓ MEXE NO TAMANHO E REFORÇA A COR ORIGINAL) */
+@keyframes pulsarBotao {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(124, 252, 85, 0.7);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px 5px rgba(124, 252, 85, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(124, 252, 85, 0);
+  }
+}
+
+/* ====================================================
+   PC: Força a mudança de cor e mantém o tamanho fixo
+   ==================================================== */
+@media (min-width: 761px) {
+  .btn-checkout:hover {
+    animation-play-state: paused; /* Pausa o pulso */
+    background-color: #5ed639 !important; /* Força o verde mais escuro */
+    transform: scale(1.02) !important;
+  }
+}
+
+/* ====================================================
+   MOBILE: Muda a cor na hora exata do toque físico
+   ==================================================== */
+@media (max-width: 760px) {
+  .btn-checkout:active {
+    animation-play-state: paused;
+    background-color: #4cb82b !important; /* Verde bem escuro de ação */
+    transform: scale(0.98) !important;
+  }
+}
+
+
+/* CORREÇÃO DO CAMPO DE EMAIL */
+.input-trial {
+  width: 100% !important;
+  display: block !important;
+  height: 48px !important; /* Força uma altura excelente para PC e Mobile */
+  padding: 0 14px !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 7px !important;
+  font-size: 14px !important;
+  margin-bottom: 12px !important;
+  box-sizing: border-box !important;
+  background-color: #ffffff !important;
+  color: var(--ink) !important;
+}
+
+/* Evita que o preenchimento automático do Google Chrome mude o visual do campo */
+.input-trial:-webkit-autofill,
+.input-trial:-webkit-autofill:hover, 
+.input-trial:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--ink) !important;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  border: 1px solid var(--line) !important;
+}

@@ -6,6 +6,8 @@
 <title>Tecla Ghost Fix — Conserte teclas com defeito sem trocar o teclado</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -27,6 +29,7 @@ body{
   color:var(--ink);
   font-family:'IBM Plex Sans',sans-serif;
   line-height:1.6;
+ 
 }
 .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
 a{color:var(--accent-dark);}
@@ -52,6 +55,8 @@ nav{
   background:var(--ink);color:var(--paper-2);padding:10px 18px;
   border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;
 }
+
+
 
 /* HERO */
 .hero{padding:72px 0 56px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;}
@@ -179,6 +184,7 @@ h2{font-family:'Space Mono',monospace;font-size:1.7em;margin-bottom:12px;}
 
 footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;}
 footer a{color:var(--muted);}
+ #nt{font-size:12px; color: crimson;}
 
 /* ===== RESPONSIVE ===== */
 
@@ -186,6 +192,7 @@ footer a{color:var(--muted);}
 @media (max-width:900px){
   .wrap{padding:0 20px;}
   .hero{gap:36px;}
+   
 }
 
 @media (max-width:760px){
@@ -236,6 +243,8 @@ footer a{color:var(--muted);}
   .support-box .watsapp{width:100%;text-align:center;}
 
   footer{font-size:12px;padding:28px 18px;}
+
+  #nt{font-size:12px; color: crimson;}
 }
 
 /* Small phones */
@@ -246,6 +255,10 @@ footer a{color:var(--muted);}
   .key{width:28px;height:28px;font-size:10px;}
   .nav-links{gap:12px 14px;font-size:12px;}
   .logo{font-size:16px;}
+   #nt{font-size:12px; color: crimson;}
+
+  
+   
 }
 
 .watsapp{
@@ -379,24 +392,50 @@ footer a{color:var(--muted);}
     <p>Não precisa decidir sem testar. Baixe a versão trial, veja o programa bloqueando ou remapeando sua tecla com defeito, e só depois decida pela licença completa.</p>
   </div>
   <div class="price-card">
-    <span class="eyebrow">Tecla Ghost Fix — trial</span>
-    <div class="price-tag">Grátis <span>por tempo limitado</span></div>
-    <ul class="price-list">
-      <li>Bloqueio e remapeamento liberados para teste</li>
-      <li>Mesma interface simples da versão completa</li>
-      <li>Sem cadastro e sem cartão de crédito</li>
-      <li>Funciona em qualquer PC ou notebook com Windows 10/11</li>
-    </ul>
-    <a href="#" class="btn btn-secondary" style="width:100%;justify-content:center;" target="_blank" rel="noopener noreferrer">Baixar versão trial</a>
-    <p class="price-note">Gostou? Ative a licença vitalícia completa por R$ 37,00 quando quiser, sem precisar baixar nada de novo.</p>
-  </div>
+  <span class="eyebrow">Tecla Ghost Fix — trial <span style="color: var(--accent-dark);">⌘</span></span>
+  <div class="price-tag">Grátis <span>por tempo limitado</span></div>
+  <ul class="price-list">
+    <li>Bloqueio e remapeamento liberados para teste</li>
+    <li>Mesma interface simples da versão completa</li>
+    <li>Sem precisar de cartão de crédito</li>
+    <li>Funciona em qualquer PC ou notebook com Windows 10/11</li>
+  </ul>
+  
+  <!-- Formulário integrado com o Formspree -->
+  <form id="trial-form" action="https://formspree.io/f/maqrobrd" method="POST" style="margin-bottom: 12px; width: 100%;">
+    <div id="capture-box">
+      <input type="email" name="email" id="user-email" class="input-trial" placeholder="Digite seu melhor e-mail..." required autocomplete="off">
+      <input type="hidden" name="produto" value="Download Trial - Tecla Ghost Fix">
+
+      <button type="submit" id="submit-btn" class="btn" style="width:100%; justify-content:center; background-color: rgb(248, 220, 148); font-weight: 600; cursor: pointer; border: none; padding: 14px;">
+        Liberar versão trial grátis
+      </button>
+    </div>
+  </form>
+
+  <p class="price-note">⏱️ <b>Baixe e resolva em 1 minuto:</b> Use a versão de avaliação para salvar seu teclado hoje. Quando o prazo expirar, o próprio programa te direciona para garantir a versão definitiva e vitalícia.</p>
+</div>
+
+
+  </form>
+  <script src="form.js"></script>
+
+  <!-- Botão de Download Real (Começa escondido com display:none) -->
+  <a id="trial" href="https://mega.nz/file/SsZBVKbY#hsxP1u7SeeIc2BUQpXNFBAeUh_vu0z3Flhv44V80-sw" class="btn btn-secondary" 
+     style="width:100%; justify-content:center; background-color: #7cfc55; display: none; font-weight: 700;" target="_blank" rel="noopener noreferrer">
+    ⬇️ Clique aqui para Baixar (MEGA)
+  </a>
+
+  <p class="price-note">⏱️ <b>Baixe e resolva em 1 minuto:</b> Use a versão de avaliação para salvar seu teclado hoje. Quando o prazo expirar, o próprio programa te direciona para garantir a versão definitiva e vitalícia.</p>
+</div>
 </section>
 
 <section id="preco" class="wrap">
   <div class="section-head">
-    <span class="eyebrow">Preço</span>
-    <h2>Licença única, sem mensalidade</h2>
-  </div>
+   
+  <span class="eyebrow"> <br> </span>
+  <h2>✅ Acesso vitalício, sem mensalidades</h2>
+</div>
   <div class="price-card">
     <span class="eyebrow">Tecla Ghost Fix — licença vitalícia</span>
     <div class="price-tag">R$ 37,00 <span>pagamento único</span></div>
@@ -406,17 +445,141 @@ footer a{color:var(--muted);}
       <li>Suporte por WhatsApp e e-mail</li>
       <li>Funciona em qualquer PC ou notebook com Windows 10/11</li>
     </ul>
-    <a href="https://mpago.la/2k7s5Xp" class="btn btn-primary" style="width:100%;justify-content:center;" target="_blank" rel="noopener noreferrer">Comprar agora</a>
-    <p class="price-note">Pagamento processado via Mercado Pago. Garantia de 7 dias — se o programa não resolver o seu problema, devolvemos o valor.</p>
+   
+    <a id="bt" href="https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=353553104-cd9028f0-8e45-416a-8e96-5d5834858e89" class="btn-checkout" style="width:100%;justify-content:center;background-color: #7cfc55; " target="_blank" rel="noopener noreferrer">Comprar agora</a>
+     <p id="nt" class="price-note">💡 Nota importante: <br> Após realizar o pagamento via Pix ou Cartão, não feche a aba. Aguarde 5 segundos para ser redirecionado automaticamente para a página de download do programa.</p>
   </div>
 </section>
 
 <section class="wrap">
   <div class="section-head">
-    <span class="eyebrow">Perguntas frequentes</span>
+    <section id="depoimentos" class="wrap">
+  <div class="section-head">
+    
+    <h2><br>Histórias de quem salvou o teclado <span style="color: var(--accent-dark);">⌘</span> <br> <br>
+      <span class="eyebrow">Quem usa aprova</span>
+    </h2>
+    <p>Veja o relato de clientes reais que resolveram o problema sem gastar centenas de reais em manutenção.</p>
+  </div>
+  
+  <div class="testimonials">
+    
+    <!-- Depoimento 1 -->
+    <div class="testimonial-card">
+      <div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">
+          "Meu notebook começou a disparar a tecla 'barra de espaço' do nada. Não dava nem para digitar a senha do Windows. Baixei o programa, bloqueei ela e remapeei pro ALT da direita. Salvou meu home office, já tava achando que ia ter que gastar uma fortuna numa carcaça nova."
+        </p>
+      </div>
+      <div class="testi-footer">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=60" alt="Foto de Camila" class="testi-avatar">
+        <div class="testi-meta">
+          <span class="testi-author">Camila Medeiros</span>
+          <span class="testi-role">Home Office / Windows 11</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Depoimento 2 -->
+    <div class="testimonial-card">
+      <div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">
+          "Estava com receio de baixar por ser um utilitário de teclado, mas o programa é extremamente leve, limpo e seguro. A tecla 'E' do meu teclado mecânico quebrou o switch e ficava duplicando tudo. Ativei o Ghost Fix e resolveu na hora."
+        </p>
+      </div>
+      <div class="testi-footer">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=60" alt="Foto de Carlos" class="testi-avatar">
+        <div class="testi-meta">
+          <span class="testi-author">Carlos Henrique</span>
+          <span class="testi-role">Dev Windows / MG</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Depoimento 3 -->
+    <div class="testimonial-card">
+      <div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">
+          "O teclado do meu notebook estava com 3 teclas mortas e uma travada que não me deixava estudar. O suporte por WhatsApp me ajudou a configurar o remapeamento certinho em menos de 2 minutos. Praticidade nota 10."
+        </p>
+        
+      </div>
+      
+      <div class="testi-footer">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=60" alt="Foto de Mariana" class="testi-avatar">
+        <div class="testi-meta">
+          <span class="testi-author">Mariana Costa</span>
+          <span class="testi-role">Estudante / Notebook</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+    
+    <section class="wrap">
+  <div class="section-head">
+    <span class="eyebrow"></span>
     <h2>Dúvidas comuns</h2>
   </div>
-  <div class="faq-item">
+
+  <div class="faq-list">
+
+    <!-- Pergunta 1 -->
+    <details class="faq-item">
+      <summary>O programa registra tudo que eu digito ou rouba senhas?</summary>
+      <div class="faq-content">
+        <p>Não! O Tecla Ghost Fix funciona 100% offline e não coleta nenhum dado. Ele age como um filtro direto no sistema, agindo apenas sobre a tecla específica que você escolheu bloquear ou remapear. Suas senhas e dados continuam totalmente seguros.</p>
+      </div>
+    </details>
+
+    <!-- Pergunta 2 -->
+    <details class="faq-item">
+      <summary>Preciso desativar meu antivírus para conseguir usar?</summary>
+      <div class="faq-content">
+        <p>Não é necessário desativar seu antivírus. Como o programa precisa interagir com os comandos do teclado para bloquear a tecla com defeito, alguns antivírus podem exibir um aviso de checagem de segurança. Isso é normal em utilitários de sistema. Basta autorizar a execução tranquilamente.</p>
+      </div>
+    </details>
+
+    <!-- Pergunta 3 -->
+    <details class="faq-item">
+      <summary>Funciona em qualquer notebook ou teclado mecânico?</summary>
+      <div class="faq-content">
+        <p>Sim! Funciona em qualquer computador, notebook (Dell, Lenovo, Acer, HP, Samsung, etc.) ou teclado externo mecânico/membrana que use o sistema operacional Windows 10 ou Windows 11.</p>
+      </div>
+    </details>
+
+    <!-- Pergunta 4 -->
+    <details class="faq-item">
+      <summary>Como funciona o prazo da versão trial?</summary>
+      <div class="faq-content">
+        <p>A versão trial é feita para você testar sem compromisso. Você baixa, configura a tecla travada e vê o problema sumir na hora. Quando o período de avaliação terminar, o próprio aplicativo exibirá um aviso te dando o link para adquirir a licença vitalícia se desejar continuar usando.</p>
+      </div>
+    </details>
+
+    <!-- Pergunta 5 -->
+    <details class="faq-item">
+      <summary>Se eu comprar a licença, preciso baixar o programa de novo?</summary>
+      <div class="faq-content">
+        <p>Não precisa baixar nada de novo! Após a confirmação do pagamento, você receberá o acesso para liberar a versão definitiva direto no aplicativo que você já testou e configurou.</p>
+      </div>
+    </details>
+
+    <!-- Pergunta 6 -->
+    <details class="faq-item">
+      <summary>Como funciona a garantia e o reembolso?</summary>
+      <div class="faq-content">
+        <p>Confiamos tanto na solução que damos 7 dias de garantia incondicional. Se por qualquer motivo o programa não resolver o seu problema, basta entrar em contato com o nosso suporte pelo WhatsApp para receber 100% do seu dinheiro de volta, sem burocracia.</p>
+      </div>
+    </details>
+
+  </div>
+</section>
+  </div>
+  <!-- <div class="faq-item">
     <h3>O programa registra tudo que eu digito?</h3>
     <p>Não. Ele só age sobre a tecla específica que você configurou para bloquear ou remapear. Nenhuma tecla é gravada ou enviada para fora do seu computador.</p>
   </div>
@@ -431,7 +594,7 @@ footer a{color:var(--muted);}
   <div class="faq-item">
     <h3>Posso pedir reembolso?</h3>
     <p>Sim, em até 7 dias após a compra, sem burocracia.</p>
-  </div>
+  </div> -->
 </section>
 
 <section class="wrap" style="border-bottom:none;">
@@ -448,6 +611,8 @@ footer a{color:var(--muted);}
   © 2026 Tecla Ghost Fix — PyTkSolutions: Todos os direitos reservados<br>
   <a href="./privacidade.html" target="_blank">Política de privacidade</a> · <a href="./termos.html" target="_blank" rel="noopener noreferrer">Termos de uso </a> · <a href="./suporte.html" target="_blank" rel="noopener noreferrer">Suporte</a>
 </footer>
+
+
 
 </body>
 </html>
